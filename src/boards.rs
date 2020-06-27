@@ -11,7 +11,7 @@ pub struct Boards {
     jira: Jira,
 }
 
-#[derive(Deserialize, Debug, Clone)]
+#[derive(Deserialize, Debug)]
 pub struct Board {
     #[serde(rename = "self")]
     pub self_link: String,
@@ -39,7 +39,7 @@ impl Boards {
 
     /// Get a single board
     ///
-    /// See this [jira docs](https://docs.atlassian.com/jira-software/REST/7.0.4/#agile/1.0/board-getBoard)
+    /// See this [jira docs](https://docs.atlassian.com/jira-software/REST/latest/#agile/1.0/board-getBoard)
     /// for more information
     pub fn get<I>(&self, id: I) -> Result<Board>
     where
